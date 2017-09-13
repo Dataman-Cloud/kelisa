@@ -1,4 +1,4 @@
-<widget-modal widget-modal-title="Create a New Dashboard">
+<widget-modal widget-modal-title="创建新的仪表盘">
     <form name="cdf" class="form" ng-submit="ctrl.submit(cdf)" novalidate>
         <form-group input="dashboardType">
             <select name="dashboardType"
@@ -7,7 +7,7 @@
                     ng-options="item.text for item in ctrl.dashboardTypes track by item.id"
                     ng-change="ctrl.setAvailableTemplates()"
                     required>
-                <option value="" disabled>Select a type</option>
+                <option value="" disabled>选择类型</option>
             </select>
 
         </form-group>
@@ -18,7 +18,7 @@
                     ng-model="ctrl.selectedTemplate"
                     ng-options="item.name for item in ctrl.availableTemplates track by item.value"
                     required>
-                <option value="" disabled>Select a template</option>
+                <option value="" disabled>选择模板</option>
             </select>
         </form-group>
 

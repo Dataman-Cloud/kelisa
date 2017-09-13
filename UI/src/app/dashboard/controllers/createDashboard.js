@@ -22,9 +22,9 @@
         // TODO: dynamically register templates with script
         ctrl.templates = [
             {value: 'capone', name: 'Cap One', type: DashboardType.TEAM},
-            {value: 'caponechatops', name: 'Cap One ChatOps', type: DashboardType.TEAM},
-            {value: 'cloud', name: 'Cloud Dashboard', type: DashboardType.TEAM},
-            {value: 'splitview', name: 'Split View', type: DashboardType.TEAM},
+            //{value: 'caponechatops', name: 'Cap One ChatOps', type: DashboardType.TEAM},
+            //{value: 'cloud', name: 'Cloud Dashboard', type: DashboardType.TEAM},
+            //{value: 'splitview', name: 'Split View', type: DashboardType.TEAM},
             {value: 'product-dashboard', name: 'Product Dashboard', type: DashboardType.PRODUCT}
         ];
 
@@ -42,7 +42,7 @@
             _(types).forEach(function(i) {
                 ctrl.dashboardTypes.push({
                     id: i.id,
-                    text: i.name + ' dashboard'
+                    text: i.name + ' 仪表盘'
                 })
             });
 

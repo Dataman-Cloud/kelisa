@@ -1,8 +1,8 @@
 <div class="monitor-view">
     <div class="widget" ng-if="ctrl.services && ctrl.services.length">
         <div class="widget-heading">
-            <span>Our Services</span>
-            <span class="pull-right icon-legend-link" ng-click="ctrl.showIconLegend()">Icon Legend</span>
+            <span>内部服务</span>
+            <span class="pull-right icon-legend-link" ng-click="ctrl.showIconLegend()">图标说明</span>
         </div>
         <div class="widget-body">
             <div class="monitor-row dash-row clickable"
@@ -17,7 +17,7 @@
 
     <div class="widget" ng-if="ctrl.dependencies && ctrl.dependencies.length">
         <div class="widget-heading">
-            Dependent Services
+            依赖服务
         </div>
         <div class="widget-body">
             <div class="monitor-row dash-row"
@@ -36,18 +36,18 @@
     </div>
 
     <p class="text-center" ng-if="!ctrl.services.length && !ctrl.dependencies.length">
-        No services configured
+        没有配置服务
     </p>
 </div>
 
 <!--A monitor modal used for the status popup-->
 <script type="text/ng-template" id="monitorStatus.html">
-    <widget-modal widget-modal-title="Status">
+    <widget-modal widget-modal-title="状态">
         <form role="form" ng-submit="ctrl.submit()" novalidate="novalidate">
             <div class="form-group">
                 <label class="control-label">{{::ctrl.service.name}}</label>
                 <label class="control-label">{{::ctrl.service.url}}</label>
-                <textarea class="form-control modal-view-status-input" rows="3" ng-model="ctrl.service.message" placeholder="Add a message"></textarea>
+                <textarea class="form-control modal-view-status-input" rows="3" ng-model="ctrl.service.message" placeholder="添加说明"></textarea>
             </div>
 
             <div class="form-group clearfix">
@@ -71,7 +71,7 @@
                     </span>
                 </div>
 
-                <button class="btn btn-primary pull-right" ng-click="ctrl.updateStatus()">Update</button>
+                <button class="btn btn-primary pull-right" ng-click="ctrl.updateStatus()">更新</button>
             </div>
         </form>
     </widget-modal>

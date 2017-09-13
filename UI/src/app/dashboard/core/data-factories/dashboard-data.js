@@ -123,11 +123,11 @@
             return [
                 {
                     "id": "team",
-                    "name": "Team"
+                    "name": "团队"
                 },
                 {
                     "id": "product",
-                    "name": "Product"
+                    "name": "产品"
                 }
             ];
 

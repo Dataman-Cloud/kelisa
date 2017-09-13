@@ -74,6 +74,7 @@ public class LoggingFilter implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+        httpServletResponse.addHeader("Access-Control-Allow-Origin", "*"); httpServletResponse.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE"); httpServletResponse.addHeader("Access-Control-Allow-Headers", "Content-Type"); httpServletResponse.addHeader("Access-Control-Max-Age", "1");
         if (httpServletRequest.getMethod().equals(HttpMethod.PUT.toString()) ||
                 (httpServletRequest.getMethod().equals(HttpMethod.POST.toString())) ||
                 (httpServletRequest.getMethod().equals(HttpMethod.DELETE.toString()))) {
@@ -113,24 +114,30 @@ public class LoggingFilter implements Filter {
             }
 
         } else {
-            if (settings.isCorsEnabled()) {
+//            if (settings.isCorsEnabled()) {
+//
+//                String clientOrigin = httpServletRequest.getHeader("Origin");
+//
+//                String corsWhitelist = settings.getCorsWhitelist();
+//                if (!StringUtils.isEmpty(corsWhitelist)) {
+//                    List<String> incomingURLs = Arrays.asList(corsWhitelist.trim().split(","));
+//
+//                    if (incomingURLs.contains(clientOrigin)) {
+//                        //adds headers to response to allow CORS
+//                        httpServletResponse.addHeader("Access-Control-Allow-Origin", clientOrigin);
+//                        httpServletResponse.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//                        httpServletResponse.addHeader("Access-Control-Allow-Headers", "Content-Type");
+//                        httpServletResponse.addHeader("Access-Control-Max-Age", "1");
+//                    }
+//                }
+//
+//            }
+//            chain.doFilter(request, response);
+            httpServletResponse.addHeader("Access-Control-Allow-Origin", "*");
 
-                String clientOrigin = httpServletRequest.getHeader("Origin");
-
-                String corsWhitelist = settings.getCorsWhitelist();
-                if (!StringUtils.isEmpty(corsWhitelist)) {
-                    List<String> incomingURLs = Arrays.asList(corsWhitelist.trim().split(","));
-
-                    if (incomingURLs.contains(clientOrigin)) {
-                        //adds headers to response to allow CORS
-                        httpServletResponse.addHeader("Access-Control-Allow-Origin", clientOrigin);
-                        httpServletResponse.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-                        httpServletResponse.addHeader("Access-Control-Allow-Headers", "Content-Type");
-                        httpServletResponse.addHeader("Access-Control-Max-Age", "1");
-                    }
-                }
-
-            }
+            httpServletResponse.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+            httpServletResponse.addHeader("Access-Control-Allow-Headers", "Content-Type");
+            httpServletResponse.addHeader("Access-Control-Max-Age", "1");
             chain.doFilter(request, response);
         }
     }

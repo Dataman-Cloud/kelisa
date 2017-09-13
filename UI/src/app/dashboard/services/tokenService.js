@@ -15,6 +15,7 @@
         }
 
         this.getToken = function () {
+            //$window.localStorage.removeItem('token');
           var token = $window.localStorage.token;
           if (token === 'undefined') {
             token = null;
@@ -23,7 +24,7 @@
         }
 
         this.removeToken = function () {
-          $window.localStorage.removeItem('token');
+            $window.localStorage.removeItem('token');
         }
     }
 })();

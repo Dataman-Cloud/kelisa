@@ -43,7 +43,7 @@
 		ctrl.estimateMetricType = "";
 		ctrl.estimateMetrics = [{type: "hours", value: "Hours"}, {type: "storypoints", value: "Story Points" }, {type: "count", value: "Issue Count" }];
 		ctrl.sprintType = "";
-		ctrl.sprintTypes = [{type: "scrum", value: "Scrum"}, {type: "kanban", value: "Kanban"}, {type: "scrumkanban", value:"Both"}];
+		ctrl.sprintTypes = [{type: "scrum", value: "计划管理"}, {type: "kanban", value: "看板"}, {type: "scrumkanban", value:"以上两项"}];
 		ctrl.listType = "";
 		ctrl.listTypes = [{type: "epics", value: "Epics"}, {type: "issues", value: "Issues"}];
 		ctrl.selectedProject = null;
@@ -90,7 +90,7 @@
 					}
 				}
 
-				ctrl.typeDropdownPlaceholder = 'Select feature data source';
+				ctrl.typeDropdownPlaceholder = '请选择任务数据源';
 				ctrl.typeDropdownDisabled = false;
 
 				if ((ctrl.selectedTypeIndex === undefined) || (ctrl.selectedTypeIndex === null)) {

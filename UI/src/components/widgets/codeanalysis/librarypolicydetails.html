@@ -3,14 +3,14 @@
         <div class="widget-detail-heading">
             <div class="row">
                 <div class="col-md-4 build-time">
-                    <span>{{libraryPolicyDetails.type}} Policy Violations</span>
+                    <span>{{libraryPolicyDetails.type}} 违规行为</span>
                 </div>
                 <div class="col-md-4 build-time">
-                    <span>Report Date: {{libraryPolicyDetails.libraryPolicyResult.timestamp | date:'MMM d, HH:mm:ss'}}</span>
+                    <span>报告日期: {{libraryPolicyDetails.libraryPolicyResult.timestamp | date:'MMM d, HH:mm:ss'}}</span>
                 </div>
                 <div class="col-md-3 view-in-tool pull-right">
                     <a ng-href="{{::libraryPolicyDetails.libraryPolicyResult.reportUrl}}" target="_blank">
-                        View Report <span class="fa fa-angle-right"></span>
+                        查看报告 <span class="fa fa-angle-right"></span>
                     </a>
                 </div>
             </div>

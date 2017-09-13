@@ -1,11 +1,11 @@
-<widget-modal widget-modal-title="Configure Deploy Widget">
+<widget-modal widget-modal-title="配置部署组件">
     <form class="deploy-config" name="configForm"
           ng-submit="deployConfig.submit(configForm.$valid,deployConfig.deployJob)" novalidate="novalidate">
         <form-group input="deployJob" errors="{required:'Please select your application'}">
 
 	    <input
 			type="text" name="collectorItemId" class="form-control"
-			placeholder="Search for a deployment application"
+			placeholder="查找部署应用"
 			ng-model="deployConfig.deployJob"
 			uib-typeahead="job as job.name for job in getDeploymentJobs($viewValue)"
 			typeahead-focus 
@@ -17,25 +17,25 @@
 			required>
 	
 		<div class="form-control" ng-show="noResults">
-			No Results Found
+			没有找到可用应用
 		</div>
         
         <form-group input="ignoreRegex" errors="{validregex:'Please enter a valid Regular Expression'}">
 	
-	        <label class="modal-label">Ignore Environment Failures Pattern:</label>
+	        <label class="modal-label">忽略环境失败正则表达式:</label>
 	        <input type="text"
 	               name="ignoreRegex"
 	               class="form-control text-center"
 	               ng-model="deployConfig.ignoreRegex"
-	               placeholder="Enter Regex"
+	               placeholder="输入正则表达式"
 	               autocomplete="on"
 	               validregex />
 	    </form-group>
 
         <div class="form-group checkbox">
-            <label title="If true deployments with the same name and ID that processed in different servers will grouped together">
+            <label title="如果选中不同服务器中处理相同名称和ID的部署将分组在一起">
                 <input type="checkbox" name="aggregateServers" ng-model="deployConfig.aggregateServers" ng-change="reload()">
-                Aggregate Servers
+                合计服务器
             </label>
         </div>
 
@@ -43,14 +43,14 @@
 
         <div class="form-group text-center">
             <label class="modal-label">
-                Alert takeover criteria:
+                告警规则:
             </label>
             <br/>
-            If any environment is down
+            任何环境失败
         </div>
 
         <div class="button-row row text-center">
-            <button type="submit" class="btn btn-primary btn-wide">Save</button>
+            <button type="submit" class="btn btn-primary btn-wide">保存</button>
         </div>
     </form>
 </widget-modal>

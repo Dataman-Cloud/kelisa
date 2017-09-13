@@ -5,7 +5,7 @@
       <div class="widget health-bars">
 
         <div class="widget-heading">
-         BT Health
+         BT健康状态
         </div>
         <div class="widget-body">
           <div guage-container>
@@ -32,7 +32,7 @@
     <div class="col-lg-3 col-sm-4">
       <div class="widget health-bars">
         <div class="widget-heading">
-          Node Health
+          节点健康状态
         </div>
         <div class="widget-body">
           <div guage-container>
@@ -59,7 +59,7 @@
     <div class="col-lg-5 col-sm-10">
       <div class="widget health-arrows">
         <div class="widget-heading">
-          Overall Health
+          整体健康状况
         </div>
           <table class="table">
             <tr>
@@ -69,7 +69,7 @@
                 <span dash-status="alert" ng-if="performanceView.responsevalue == 2"></span>
               </td>
               <td>
-                Response Time
+                响应时间
               </td>
               <td>
                 {{performanceView.responsetime}} ms
@@ -83,7 +83,7 @@
                 <span dash-status="alert" ng-if="performanceView.errorvalue == 2"></span>
               </td>
               <td>
-                Errors Per Minute
+                每分钟错误数
               </td>
               <td>
                 {{performanceView.errorspm}}
@@ -94,7 +94,7 @@
               <td>
               </td>
               <td>
-                Calls Per Minute
+                每分钟请求数
               </td>
               <td>
                 {{performanceView.callspm}}
@@ -109,7 +109,7 @@
       <div class="col-lg-1 col-sm-2">
         <div class="widget">
           <div class="widget-heading">
-            Warning
+            警告
           </div>
           <div class="widget-body">
             <table class="table violations" style="cursor:pointer;">
@@ -143,7 +143,7 @@
     <div class="col-lg-6 col-sm-12">
           <div class="widget health-charts health-charts-calls">
             <div class="widget-heading">
-              Calls
+              请求列表
             </div>
             <div class="widget-body">
               <chartist class="ct-chart ct-octave dash-chart-alt"
@@ -160,7 +160,7 @@
         <div class="col-lg-6 col-sm-12">
           <div class="widget health-charts health-charts-errors">
             <div class="widget-heading">
-              Errors
+              错误列表
             </div>
             <div class="widget-body">
               <chartist class="ct-chart ct-octave dash-chart-alt"

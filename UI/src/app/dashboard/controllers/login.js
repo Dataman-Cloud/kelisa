@@ -39,7 +39,7 @@
             $location.path('/signup');
         };
 
-        $scope.standardLogin = { name: 'Standard Login', login: authService.login, signup: signup };
+        $scope.standardLogin = { name: '登录', login: authService.login, signup: signup };
         $scope.ldapLogin = { name: 'Ldap Login', login: authService.loginLdap };
 
     }

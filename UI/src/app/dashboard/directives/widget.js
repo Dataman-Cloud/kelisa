@@ -244,7 +244,7 @@
                     load.then(function(result) {
                         var lastUpdated = angular.isArray(result) ? _.max(result) : result;
                         var collectorItems = result.collectorItem;
-                        $scope.lastUpdatedDisplay = moment(lastUpdated).dash('ago');
+                        $scope.lastUpdatedDisplay = moment(lastUpdated).dash('之前');
                         $scope.collectorItems = collectorItems;
                         if (collectorItems) {
                             for (var i = 0; (i < collectorItems.length) && !$scope.collectionError ; i++ ) {

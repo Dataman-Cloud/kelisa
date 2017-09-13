@@ -4,29 +4,29 @@
 			<div class="row">
 				<div class="col-md-3 build-desc">
 					<span class="dash-status-lg" dash-status="{{detail.buildPassed()}}"></span>
-					<span class="build-number">Build {{::detail.build.number}}</span>
+					<span class="build-number">构建 {{::detail.build.number}}</span>
 				</div>
 				<div class="col-md-3 build-time">
 					<span>{{::detail.build.endTime | date:'MMM d, HH:mm:ss'}}</span>
 				</div>
 				<div class="col-md-2 build-duration">
-					<span>Duration: {{::detail.build.duration | duration}}</span>
+					<span>时长: {{::detail.build.duration | duration}}</span>
 				</div>
 				<div class="col-md-4 view-in-tool">
 					<a ng-href="{{::detail.build.buildUrl}}" target="_blank">
-						View in {{detail.buildUrlNiceName()}} <span class="fa fa-angle-right"></span>
+						前往{{detail.buildUrlNiceName()}}查看 <span class="fa fa-angle-right"></span>
 					</a>
 				</div>
 			</div>
 		</div>
 		<div class="widget-detail-body">
-			<span class="no-changesets" ng-hide="detail.build.sourceChangeSet.length">No Changes</span>
+			<span class="no-changesets" ng-hide="detail.build.sourceChangeSet.length">没有变更</span>
 			<table class="table" ng-show="detail.build.sourceChangeSet.length">
 				<thead>
 					<tr>
-						<th>Revision</th>
-						<th>Author</th>
-						<th>Message</th>
+						<th>版本号</th>
+						<th>作者</th>
+						<th>说明</th>
 					</tr>
 				</thead>
 				<tbody>

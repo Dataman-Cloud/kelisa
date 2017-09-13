@@ -1,10 +1,10 @@
-<widget-modal widget-modal-title="Add team" class="add-team-modal" id="add-team">
+<widget-modal widget-modal-title="添加团队" class="add-team-modal" id="add-team">
     <form name="addTeamForm"
           ng-submit="ctrl.submit(addTeamForm.$valid)"
           novalidate="novalidate">
 
-        <form-group input="collectorItemId" class="has-feedback typeahead-dropdown" errors="{'required': 'Please select a team'}">
-            <input placeholder="Select a team dashboard"
+        <form-group input="collectorItemId" class="has-feedback typeahead-dropdown" errors="{'required': '请选择团队'}">
+            <input placeholder="选择面板"
                    type="text"
                    name="collectorItemId"
                    class="form-control"
@@ -26,11 +26,11 @@
                    type="text"
                    name="teamName"
                    ng-model="ctrl.customName"
-                   placeholder="Custom team name (optional)"
+                   placeholder="团队别名（选填）"
                    autocomplete="off" />
         </div>
         <div class="button-row text-center">
-            <button type="submit" class="btn btn-primary btn-wide">Add this team</button>
+            <button type="submit" class="btn btn-primary btn-wide">添加团队</button>
         </div>
     </form>
 </widget-modal>

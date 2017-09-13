@@ -2,9 +2,9 @@
     <div class="col-lg-4 col-sm-12">
         <div class="widget ca-issues">
             <div class="widget-heading">
-                <span class="">Static Analysis</span>
+                <span class="">静态分析</span>
                 <a href="{{caWidget.reportUrl}}" target="_blank">
-                    <span class="report-link pull-right">View All <i class="fa fa-arrow-right"
+                    <span class="report-link pull-right">查看所有 <i class="fa fa-arrow-right"
                                                                      aria-hidden="true"></i></span>
                 </a>
             </div>
@@ -30,7 +30,7 @@
 
         <div class="widget ca-tests">
             <div class="widget-heading">
-                Unit tests
+                单元测试
             </div>
             <div class="widget-body">
                 <table class="table">
@@ -51,18 +51,18 @@
         </div>
         <div class="widget ca-tests" ng-if="caWidget.libraryPolicyDetails != null">
             <div class="widget-heading">
-                Open Source Scan
+                开源代码扫描
             </div>
             <div class="widget-body">
                 <table class="table">
                     <tr class="dash-row clickable" ng-click="caWidget.showLibraryPolicyDetails('License', caWidget.libraryPolicyDetails)">
                         <td><span  dash-status="caWidget.getDashStatus()"></span></td>
-                        <td class="ca-name">License</td>
+                        <td class="ca-name">许可</td>
                         <td class="ca-value">{{(caWidget.libraryLicenseThreatStatus) ? caWidget.libraryLicenseThreatStatus.count : 0}}</td>
                     </tr>
                     <tr class="dash-row clickable" ng-click="caWidget.showLibraryPolicyDetails('Security', caWidget.libraryPolicyDetails)">
                         <td><span  dash-status="caWidget.getDashStatus()"></span></td>
-                        <td class="ca-name">Security</td>
+                        <td class="ca-name">安全</td>
                         <td class="ca-value">{{(caWidget.librarySecurityThreatStatus) ? caWidget.librarySecurityThreatStatus.count : 0}}</td>
                     </tr>
                 </table>
@@ -73,7 +73,7 @@
     <div class="col-lg-4 col-sm-12">
         <div class="widget ca-version">
             <div class="widget-heading">
-                Version {{ caWidget.versionNumber }}
+                版本号 {{ caWidget.versionNumber }}
             </div>
             <div class="widget-body">
                 <div class="clearfix" fit-text=".ca-value span" fit-text-max="99px">
@@ -85,7 +85,7 @@
                             </span>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="ca-label">Quality<br/>Gate</div>
+                        <div class="ca-label">质量分析</div>
                     </div>
                     <div ng-if="!caWidget.showQualityGate" class="col-sm-6">
                         <div class="ca-value ca-status-{{ caWidget.rulesCompliance.status || 'Ok'}}"
@@ -100,7 +100,7 @@
                             <span ng-hide="caWidget.rulesCompliance.value">-</span>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="ca-label">Rules<br/>Compliance</div>
+                        <div class="ca-label">遵守规则</div>
                     </div>
                     <div class="col-sm-6">
                         <div class="ca-value ca-status-{{ caWidget.technicalDebt.status || 'Ok'}}"
@@ -112,7 +112,7 @@
                             <span>{{ caWidget.technicalDebt.formattedValue }}</span>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="ca-label">Technical<br/>Debt</div>
+                        <div class="ca-label">技术缺口</div>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
 
         <div class="widget ca-coverage">
             <div class="widget-heading">
-                Code coverage
+                代码覆盖率
             </div>
             <div class="widget-body">
                 <div guage-container>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
-                <div class="ca-value text-center">{{caWidget.linesofCode.value | number:0 }} lines of code</div>
+                <div class="ca-value text-center">{{caWidget.linesofCode.value | number:0 }} 行代码</div>
             </div>
         </div>
     </div>
@@ -151,7 +151,7 @@
     <div class="col-lg-4 col-sm-12">
         <div class="widget ca-security">
             <div class="widget-heading">
-                Security Analysis
+                安全分析
             </div>
             <div class="widget-body">
                 <table class="table">
@@ -175,7 +175,7 @@
 
         <div class="widget">
             <div class="widget-heading">
-                Functional tests
+                功能测试
             </div>
             <div class="widget-body">
                 <table class="table">

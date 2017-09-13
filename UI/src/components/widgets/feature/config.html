@@ -1,12 +1,12 @@
-<widget-modal widget-modal-title="Configure Feature Widget">
+<widget-modal widget-modal-title="配置任务组件">
 	<form name="configForm"
 		  ng-submit="ctrl.submit(configForm.$valid, configForm)"
 		  novalidate="novalidate">
 		<div class="form-group clearfix"
 			 ng-class="{'has-error': (configForm.collectorItemId.$invalid || configForm.selectedProject.$invalid) && ctrl.submitted}">
 
-			<form-group input="collectorId" class="col-sm-push-2 col-sm-8" errors="{required:'Please select a valid feature data source'}">
-				<label class="modal-label">Agile Content Tool Type:</label>
+			<form-group input="collectorId" class="col-sm-push-2 col-sm-8" errors="{required:'请选择可用的内容管理工具数据源'}">
+				<label class="modal-label">敏捷内容管理工具:</label>
 				<select
 						name="collectorId" class="form-control" ng-model="ctrl.collectorId"
 						ng-init="ctrl.collectorId"
@@ -16,17 +16,17 @@
 					<option value="">{{ctrl.typeDropdownPlaceholder}}</option>
 				</select>
 				<p class="help-block"
-				   ng-if="configForm.collectorItemId.$error.required || configForm.selectedProject.$error.required">Please select
-					a valid feature data source</p>
+				   ng-if="configForm.collectorItemId.$error.required || configForm.selectedProject.$error.required">请选择有效的任务数据源
+				</p>
 			</form-group>
 
-			<form-group input="projectName" ng-hide="ctrl.hideProjectDropDown" class="col-sm-push-2 col-sm-8"  errors="{required:'Please select a valid project',anyError:'Project and/or Team selection required'}" >
-				<label class="modal-label">Project Name:</label>
+			<form-group input="projectName" ng-hide="ctrl.hideProjectDropDown" class="col-sm-push-2 col-sm-8"  errors="{required:'请选择有效的项目',anyError:'项目 和/或 团队为必选项'}" >
+				<label class="modal-label">项目名称:</label>
 				<input
 						type="text"
 						name="projectName"
 						class="form-control"
-						placeholder="Search for a project name"
+						placeholder="查找项目名称"
 						ng-model="ctrl.projectName"
 						uib-typeahead="suspect.name as suspect.name for suspect in ctrl.getProjectNames($viewValue)"
 						typeahead-focus
@@ -38,13 +38,13 @@
 						required>
 			</form-group>
 
-			<form-group input="teamName" ng-hide="ctrl.hideTeamDropDown"  class="col-sm-push-2 col-sm-8" errors="{required:'Please select a valid team',teamError:'Project and/or Team selection required'}">
-				<label class="modal-label">Team Name:</label>
+			<form-group input="teamName" ng-hide="ctrl.hideTeamDropDown"  class="col-sm-push-2 col-sm-8" errors="{required:'请选择有效的团队',teamError:'项目 和/或 团队为必选项 '}">
+				<label class="modal-label">团队名称:</label>
 				<input
 						type="text"
 						name="teamName"
 						class="form-control"
-						placeholder="Search for a team name"
+						placeholder="查找团队名称"
 						ng-model="ctrl.teamName"
 						uib-typeahead="suspect.name as suspect.name for suspect in ctrl.getTeamNames($viewValue)"
 						typeahead-focus
@@ -57,7 +57,7 @@
 			</form-group>
 
 			<form-group input="estimateMetricType" ng-hide="ctrl.hideEstimateMetricDropDown" class="col-sm-push-2 col-sm-8" errors="{required:'Please select a valid estimate metric'}">
-				<label class="modal-label">Estimate Metric:</label>
+				<label class="modal-label">预测度量:</label>
 				<select
 						name="estimateMetricType" class="form-control"
 						ng-model="ctrl.estimateMetricType"
@@ -67,8 +67,8 @@
 				</select>
 			</form-group>
 
-			<form-group input="sprintType" ng-hide="ctrl.hideSprintTypeDropDown" class="col-sm-push-2 col-sm-8" errors="{required:'Please select a valid sprint type'}">
-				<label class="modal-label">Sprint Type:</label>
+			<form-group input="sprintType" ng-hide="ctrl.hideSprintTypeDropDown" class="col-sm-push-2 col-sm-8" errors="{required:'请选择下列任务类型'}">
+				<label class="modal-label">任务类型:</label>
 				<select
 						name="sprintType" class="form-control"
 						ng-model="ctrl.sprintType"
@@ -77,8 +77,8 @@
 				</select>
 			</form-group>
 
-			<form-group input="listType" ng-hide="ctrl.hideListTypeDropDown" class="col-sm-push-2 col-sm-8" errors="{required:'Please select a valid feature type to list'}">
-				<label class="modal-label">List Feature Type:</label> <select
+			<form-group input="listType" ng-hide="ctrl.hideListTypeDropDown" class="col-sm-push-2 col-sm-8" errors="{required:'请选择下列问题类型'}">
+				<label class="modal-label">问题类型:</label> <select
 					name="listType" class="form-control"
 					ng-model="ctrl.listType"
 					ng-options="item.type as item.value for item in ctrl.listTypes"
@@ -88,7 +88,7 @@
 		</div>
 
 		<div class="button-row row text-center">
-			<button type="submit" class="btn btn-primary btn-wide">Save</button>
+			<button type="submit" class="btn btn-primary btn-wide">保存</button>
 		</div>
 	</form>
 </widget-modal>

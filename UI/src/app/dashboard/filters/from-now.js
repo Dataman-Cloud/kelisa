@@ -10,7 +10,7 @@
 
     function fromNowFilter() {
     	return function(input) {
-    		return input ? moment(input).dash('ago') : '';
+    		return input ? moment(input).dash('之前') : '';
     	};
     }
 })();

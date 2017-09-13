@@ -3,8 +3,8 @@
           ng-submit="buildConfig.submit(buildConfigForm.$valid,buildConfig.collectorItemId)" novalidate="novalidate">
         <form-group class="text-center" input="collectorItemId" errors="{required: 'Please select a collector'}">
 
-            <label class="modal-label">Build Job</label>
- 			 <input type="text" name="collectorItemId" class="form-control" placeholder="Search a build job"
+            <label class="modal-label">构建项目</label>
+ 			 <input type="text" name="collectorItemId" class="form-control" placeholder="请输入或选择构建项目"
        ng-model="buildConfig.collectorItemId"
  			 uib-typeahead="item as item.description for item in getJobs($viewValue)" typeahead-focus
  			 typeahead-template-url="jobUrlTemplate.html"
@@ -15,13 +15,13 @@
  			 required>
 
        <div class="form-control" ng-show="noResults">
-            No Results Found
+            没有可用的项目，请检查Jenkins配置
         </div>
 
         </form-group>
 
         <form-group class="text-center" input="buildDurationThreshold" errors="{required:'Build threshold is required', pattern: 'Please enter a number'}">
-            <label class="modal-label">Build duration threshold</label>
+            <label class="modal-label">构建时长阈值</label>
             <input
                 type="text"
                 name="buildDurationThreshold"
@@ -31,13 +31,13 @@
                 minlength="1"
                 maxlength="3"
                 pattern="\d*\.?\d*"
-                required>&nbsp;&nbsp;&nbsp;minutes
+                required>&nbsp;&nbsp;&nbsp;分钟
         </form-group>
 
         <hr/>
 
         <form-group input="buildConsecutiveFailureThreshold" class="text-center" errors="{required:'Takeover criteria is required', pattern:'Please enter a number'}">
-            <label class="modal-label">Alert takeover criteria:</label>
+            <label class="modal-label">告警规则:</label>
             <input
                 type="text"
                 name="buildConsecutiveFailureThreshold"
@@ -47,7 +47,7 @@
                 minlength="1"
                 maxlength="3"
                 pattern="\d*\.?\d*"
-                required>&nbsp;&nbsp;&nbsp;consecutive build fails
+                required>&nbsp;&nbsp;&nbsp;连续构建失败次数
         </form-group>
 
         <div class="button-row row text-center">

@@ -1,7 +1,7 @@
 <div class="repo-view">
     <div class="widget">
         <div class="widget-heading">
-            Commits per day
+            每日提交数量
         </div>
         <div class="widget-body">
             <chartist class="ct-chart ct-octave dash-chart-alt"
@@ -16,27 +16,27 @@
 
     <div class="widget">
         <div class="widget-heading">
-            Summary
+            总览
         </div>
         <div class="widget-body">
             <table class="table repo-summary-table">
                 <tr>
-                    <td>Total Commits</td>
+                    <td>提交总数</td>
                     <td>{{repoView.lastDayCommitCount}}</td>
                     <td>{{repoView.lastSevenDaysCommitCount}}</td>
                     <td>{{repoView.lastFourteenDaysCommitCount}}</td>
                 </tr>
                 <tr>
-                    <td>Contributors</td>
+                    <td>贡献者</td>
                     <td>{{repoView.lastDayContributorCount}}</td>
                     <td>{{repoView.lastSevenDaysContributorCount}}</td>
                     <td>{{repoView.lastFourteenDaysContributorCount}}</td>
                 </tr>
                 <tr class="totals">
                     <td></td>
-                    <td>Today</td>
-                    <td>Last<br/>7 Days</td>
-                    <td>Last<br/>14 Days</td>
+                    <td>今天</td>
+                    <td>最近一周</td>
+                    <td>最近两周</td>
                 </tr>
             </table>
         </div>

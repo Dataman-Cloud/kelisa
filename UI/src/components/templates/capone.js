@@ -15,26 +15,26 @@
 
         ctrl.tabs = [
             { name: "Widget"},
-            { name: "Pipeline"},
-            { name: "Cloud"}
+            { name: "Pipeline"}
+            //{ name: "Cloud"}
         ];
 
 
-        ctrl.minitabs = [
-            { name: "Quality"},
-            { name: "Performance"}
-
-        ];
+        //ctrl.minitabs = [
+        //    { name: "Quality"},
+        //    { name: "Performance"}
+        //
+        //];
 
         ctrl.widgetView = ctrl.tabs[0].name;
         ctrl.toggleView = function (index) {
             ctrl.widgetView = typeof ctrl.tabs[index] === 'undefined' ? ctrl.tabs[0].name : ctrl.tabs[index].name;
         };
 
-        ctrl.miniWidgetView = ctrl.minitabs[0].name;
-        ctrl.miniToggleView = function (index) {
-            ctrl.miniWidgetView = typeof ctrl.minitabs[index] === 'undefined' ? ctrl.minitabs[0].name : ctrl.minitabs[index].name;
-        };
+        //ctrl.miniWidgetView = ctrl.minitabs[0].name;
+        //ctrl.miniToggleView = function (index) {
+        //    ctrl.miniWidgetView = typeof ctrl.minitabs[index] === 'undefined' ? ctrl.minitabs[0].name : ctrl.minitabs[index].name;
+        //};
 
 
     }

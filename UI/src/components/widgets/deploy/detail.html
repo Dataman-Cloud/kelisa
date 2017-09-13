@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-3 view-in-tool">
                     <a ng-href="{{::detail.environment.url}}" target="_blank">
-                        View in {{::detail.collectorName }} <span class="fa fa-angle-right"></span>
+                        前往{{::detail.collectorName }}查看 <span class="fa fa-angle-right"></span>
                     </a>
                 </div>
             </div>
@@ -36,10 +36,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th colspan="2">Component</th>
-                        <th>Time</th>
-                        <th>Version</th>
-                        <th colspan="2">Resource</th>
+                        <th colspan="2">组件</th>
+                        <th>文件</th>
+                        <th>时间</th>
+                        <th colspan="2">来源</th>
                     </tr>
                 </thead>
                 <tbody ng-repeat="unit in detail.environment.units | orderBy:['deployed', 'name'] track by $index">

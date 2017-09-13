@@ -1,4 +1,4 @@
-<widget-modal widget-modal-title="Configure Code Analysis Widget" class="ca-config">
+<widget-modal widget-modal-title="配置代码分析组件" class="ca-config">
     <form name="configForm" role="form"
           ng-submit="caWidget.submit(caWidget.caCollectorItem, caWidget.saCollectorItem, caWidget.ossCollectorItem, caWidget.testConfigs)"
           novalidate="novalidate">
@@ -7,9 +7,9 @@
 
             <form-group input="caCollectorItem" class="text-center">
 
-                <div class="text-center modal-label">Static Code Analysis:</div>
+                <div class="text-center modal-label">静态代码分析:</div>
 
-				<input type="text" name="caCollectorItem" class="form-control" placeholder="Search a Code Analysis Job"
+				<input type="text" name="caCollectorItem" class="form-control" placeholder="请选择静态代码分析项目"
 					ng-model="caWidget.caCollectorItem"
 					uib-typeahead="item as item.description for item in getCodeQualityCollectors($viewValue)" typeahead-focus
 					typeahead-template-url="sonarProjectUrlTemplate.html"
@@ -19,7 +19,7 @@
 
 					required>
           <div class="form-control" ng-show="noResults">
-            No Results Found
+            没有查到结果
           </div>
 
             </form-group>
@@ -27,10 +27,10 @@
 
 
         <div class="form-group text-center">
-            <div class="text-center modal-label">Security Scan:</div>
+            <div class="text-center modal-label">安全扫描:</div>
 
             <ui-select ng-model="caWidget.saCollectorItem" theme="bootstrap" ng-disabled="caWidget.saJobs.length === 0">
-                <ui-select-match placeholder="Select your SecurityAnalysis job">{{$select.selected.description}}
+                <ui-select-match placeholder="请选择您的安全扫描项目">{{$select.selected.description}}
                 </ui-select-match>
                 <ui-select-choices
                         repeat="item in (caWidget.saJobs | orderBy:['item.collector.name','description'] | filter: $select.search ) track by item.id"
@@ -39,16 +39,16 @@
                     <div ng-bind-html="(item.collector.name + ' - ' + item.description) | highlight: $select.search"></div>
                 </ui-select-choices>
                 <ui-select-no-choice>
-                    No Jobs were found
+                    没有找到可用的项目
                 </ui-select-no-choice>
             </ui-select>
         </div>
 
         <div class="form-group text-center">
-            <div class="text-center modal-label">Open Source Scan:</div>
+            <div class="text-center modal-label">开源代码扫描:</div>
 
             <ui-select ng-model="caWidget.ossCollectorItem" theme="bootstrap" ng-disabled="caWidget.ossJobs.length === 0">
-                <ui-select-match placeholder="Select your Open Source scan job">{{$select.selected.description}}
+                <ui-select-match placeholder="请选择项目">{{$select.selected.description}}
                 </ui-select-match>
                 <ui-select-choices
                         repeat="item in (caWidget.ossJobs | orderBy:['item.collector.name','description'] | filter: $select.search ) track by item.id"
@@ -57,7 +57,7 @@
                     <div ng-bind-html="(item.collector.name + ' - ' + item.options.applicationName) | highlight: $select.search"></div>
                 </ui-select-choices>
                 <ui-select-no-choice>
-                    No Jobs were found
+                    没有找到可用的项目
                 </ui-select-no-choice>
             </ui-select>
 
@@ -65,7 +65,7 @@
 
 
         <form-group class="text-center">
-            <div class="text-center modal-label">Functional Tests:</div>
+            <div class="text-center modal-label">功能测试:</div>
 
             <div class="form-group text-center" ng-repeat="configItem in caWidget.testConfigs">
                 <div class="col-sm-3">
@@ -90,7 +90,7 @@
                             <div ng-bind-html="(item.niceName + '-' + item.description) | highlight: $select.search"></div>
                         </ui-select-choices>
                         <ui-select-no-choice>
-                            No Jobs were found
+                           没有找到可用的项目
                         </ui-select-no-choice>
                     </ui-select>
 
@@ -104,7 +104,7 @@
             </div>
             <div class="form group text-center">
                 <label></label>
-                <button type="submit" class="btn btn-primary btn-wide">Save</button>
+                <button type="submit" class="btn btn-primary btn-wide">保存</button>
             </div>
         </form-group>
     </form>

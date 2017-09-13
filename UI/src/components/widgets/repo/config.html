@@ -6,14 +6,14 @@
 	<form-group input="repoOption"
 				class="text-center"
 				errors="{required:'Please select a repository type'}">
-		<label class="modal-label">Repo Type</label>
+		<label class="modal-label">仓库类型</label>
 
 		<select name="repoOption"
 				class="form-control text-center"
 				ng-model="repoConfig.repoOption"
 				ng-options="repoOption.value for repoOption in repoConfig.repoOptions"
 				required>
-			<option value="" disabled>Select a type</option>
+			<option value="" disabled>请选择类型</option>
 		</select>
 	</form-group>
 
@@ -21,7 +21,7 @@
 				class="text-center"
 				errors="{required:'Repository URL is required', url: 'Please enter a valid URL'}">
 
-		<label class="modal-label">Repo URL</label>
+		<label class="modal-label">仓库URL地址</label>
 		<input type="url"
 			   name="repoUrl"
 			   class="form-control text-center"
@@ -36,7 +36,7 @@
 				input="gitBranch"
 				class="text-center">
 
-		<label class="modal-label" id="repoLabel">Branch</label>
+		<label class="modal-label" id="repoLabel">分支</label>
 
 		<input
 			type="text"
@@ -51,7 +51,7 @@
 	<form-group ng-if="repoConfig.repoOption.name != 'Gitlab'" input="repouser"
 				errors="{}">
 
-		<label class="modal-label">Credentials (Optional)</label>
+		<label class="modal-label">认证 (可选)</label>
 
 		<input type="text"
 			   name="repouser"
@@ -74,7 +74,7 @@
 	<form-group ng-if="repoConfig.repoOption.name == 'Gitlab'" input="repokey"
 				errors="{}">
 
-		<label class="modal-label">API Key (Optional, required for private repos)</label>
+		<label class="modal-label">私钥 (可选，用于私有仓库)</label>
 
 		<input type="password"
 			   name="repokey"
@@ -82,11 +82,11 @@
 			   ng-model="repoConfig.repouser"
 			   maxlength="25"
 			   autocomplete="off"
-			   placeholder="Enter your api key"/>
+			   placeholder="请输入私钥"/>
 	</form-group>
 
 	<div class="button-row row text-center">
-		<button type="submit" class="btn btn-primary btn-wide">Save</button>
+		<button type="submit" class="btn btn-primary btn-wide">保存</button>
 	</div>
 </form>
 </widget-modal>

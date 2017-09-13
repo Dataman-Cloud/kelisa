@@ -2,7 +2,7 @@
 <widget-modal class="pipeline-config form-horizontal" widget-modal-title="Configure Delivery Pipeline">
     <form class="pipeline-config" name="pipeLineConfigForm" ng-submit="pipelineConfig.save(pipeLineConfigForm)"
           novalidate="novalidate">
-        <div class="text-center form-group">Map your environments to the following pipeline stages.<br><i>Select radio button for production environment </i></div>
+        <div class="text-center form-group">请指定下列阶段对应的环境名称<br><i>请确保为生产环境选择单选框 </i></div>
         <div class="form-group text-center" ng-repeat="map in pipelineConfig.environmentMappings">
             <div class="col-sm-1">
                 <form-group ng-if="$index > pipelineConfig.environmentMappings.length - 2" input="radio">
@@ -35,10 +35,10 @@
                         ng-options="item.value as item.name for item in pipelineConfig.environments | orderBy: 'name'"
                         ng-change="pipelineConfig.validateDropDown()"
                         ng-disabled="pipelineConfig.environmentsDropdownDisabled">
-                    <option value="">Select an environment</option>
+                    <option value="">选择阶段</option>
                 </select>
                 <div class="alert-danger" ng-if='map.isDuplicateDropDown' >
-                    choose different value
+                    请选择不同的阶段
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
             <span class="fa fa-plus-circle fa-2x clickable" ng-click="pipelineConfig.addMapping()"></span>
         </div>
         <div class="button-row row text-center">
-            <button class="btn btn-primary" ng-disabled="pipelineConfig.saveDisabled || pipelineConfig.saveDisabledDropDown" >Save</button>
+            <button class="btn btn-primary" ng-disabled="pipelineConfig.saveDisabled || pipelineConfig.saveDisabledDropDown" >保存</button>
         </div>
     </form>
 

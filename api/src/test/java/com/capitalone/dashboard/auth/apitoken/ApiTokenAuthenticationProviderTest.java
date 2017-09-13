@@ -25,8 +25,8 @@ public class ApiTokenAuthenticationProviderTest {
 
     @Test
     public void shouldAuthenticate() {
-        String username = "username";
-        String password = "password";
+        String username = "test";
+        String password = "123456";
         Authentication auth = new ApiTokenAuthenticationToken(username, password);
         when(service.authenticate(username, password)).thenReturn(auth);
 

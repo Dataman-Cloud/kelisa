@@ -4,7 +4,7 @@
     <div class="col-md-8 col-md-push-2">
         <div class="widget-modal r">
             <div class="widget-modal-heading">
-                Select Your Dashboard
+                选择仪表盘
             </div>
             <div class="widget-modal-body">
                 <div class="text-center">
@@ -12,7 +12,7 @@
                         <button type="button"
                                 class="btn btn-secondary"
                                 ng-class="{'btn-info': ctrl.dashboardType == undefined}"
-                                ng-click="ctrl.setType()">All dashboards</button>
+                                ng-click="ctrl.setType()">全部仪表盘</button>
 
                         <button type="button"
                                 class="btn btn-secondary"
@@ -21,7 +21,7 @@
                                 ng-click="ctrl.setType(item.id)">
                             <span class="fa {{item.icon}}" ng-if="item.icon"></span>
 
-                            {{item.name}} dashboards
+                            {{item.name}} 仪表盘
                         </button>
                     </div>
                 </div>
@@ -43,14 +43,14 @@
                                     <span class="fa-plus fa-stack-1x"></span>
                                 </span>
                                 <br/>
-                                Create a new<br/>dashboard
+                                创建新的<br/>仪表盘
                             </div>
                         </div>
 
                     </div>
                     <div class="col-sm-8 col-sm-pull-4">
                         <div ng-show="ctrl.showAuthentication">
-                            <div class="text-2x">My Dashboards <span class="label label-default"></span></div>
+                            <div class="text-2x">我的仪表盘 <span class="label label-default"></span></div>
 
                             <div class="text-center" ng-hide="ctrl.mydash">Loading Your Dashboards...</div>
                             <div class="text-center" ng-show="ctrl.mydash && !mydashboards.length">
@@ -80,7 +80,7 @@
                         </div>
 
                         <div class="gap">
-                            <div class="text-2x">All Dashboards</span></div>
+                            <div class="text-2x">全部仪表盘</span></div>
 
                             <div class="text-center" ng-hide="ctrl.dashboards">Loading Dashboards...</div>
 

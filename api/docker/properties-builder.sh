@@ -32,7 +32,7 @@ logSplunkRequest=${LOG_SPLUNK_REQUEST:-false}
 
 corsEnabled=${CORS_ENABLED:-false}
 
-corsWhitelist=${CORS_WHITELIST:-http://domain1.com:port,http://domain2.com:port}
+corsWhitelist=${CORS_WHITELIST:-*}
 
 feature.dynamicPipeline=${FEATURE_DYNAMIC_PIPELINE:-disabled}
 
@@ -66,5 +66,6 @@ monitor.proxy.password=${MONITOR_PROXY_PASSWORD:-}
 monitor.proxy.type=${MONITOR_PROXY_TYPE:-http}
 monitor.proxy.host=${MONITOR_PROXY_HOST:-}
 monitor.proxy.port=${MONITOR_PROXY_PORT:-80}
-
+server.contextPath=${MONITOR_PROXY_PORT:-/api}
+server.port=${MONITOR_PROXY_PORT:-8080}
 EOF

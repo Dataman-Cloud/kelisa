@@ -4,15 +4,15 @@
 		<div class="widget">
 			<div class="widget-body">
 				<div class="col-xs-9.5 text-standard-sm dash-overflow">
-                    Project: <em>{{ctrl.projectName}}</em>
+                    项目: <em>{{ctrl.projectName}}</em>
                 </div>
                 <div class="col-xs-9.5 text-standard-sm dash-overflow">
-                    Team: <em>{{ctrl.teamName}}</em>
+                    团队: <em>{{ctrl.teamName}}</em>
                 </div>
 			</div>
 
 			<div class="widget-heading">
-				<div class="iteration-change-btn text-standard-sm">Iteration:
+				<div class="iteration-change-btn text-standard-sm">迭代:
 					<button id="next-btn" class="pull-right btn-default btn-xm active" ng-show="ctrl.numberOfSprintTypes === 2" ng-click="ctrl.animateAgileView(true)">>></button>
 					<button id="pause-btn" class="pull-right btn-default btn-xm active" ng-show="ctrl.numberOfSprintTypes === 2" ng-click="ctrl.pauseAgileView()" ng-model="ctrl.pausePlaySymbol">{{ctrl.pausePlaySymbol}}</button>
 				</div>
@@ -35,19 +35,19 @@
 						<div class="story-summary-count story-open">
 							<span>{{ctrl.openStoryPoints}}</span>
 						</div>
-						<div class="story-summary-type">Open</div>
+						<div class="story-summary-type">开启数量</div>
 					</div>
 					<div class="col-xs-4">
 						<div class="story-summary-count story-wip">
 							<span>{{ctrl.wipStoryPoints}}</span>
 						</div>
-						<div class="story-summary-type">WIP</div>
+						<div class="story-summary-type">关闭数量</div>
 					</div>
 					<div class="col-xs-4">
 						<div class="story-summary-count story-done">
 							<span>{{ctrl.doneStoryPoints}}</span>
 						</div>
-						<div class="story-summary-type">Done</div>
+						<div class="story-summary-type">已完成</div>
 					</div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 			</div>
 			
 			<div class="widget-body" ng-if="ctrl.listType === 'issues'">
-                <div class="widget-heading">Issues in Progress
+                <div class="widget-heading">正在处理的问题
                     <button class="pull-right btn-default btn-xm active" ng-show="ctrl.showFeatureLimitButton" ng-click="ctrl.setFeatureLimit()" ng-init="ctrl.featureLimit=4">+/-</button>
                 </div>
                 <div class="dash-row" ng-repeat="issue in ctrl.issueStoryPoints | limitTo:ctrl.featureLimit">
@@ -98,15 +98,15 @@
 		<div class="widget">
 			<div class="widget-body">
 				<div class="col-xs-9.5 text-standard-sm dash-overflow">
-                    Project: <em>{{ctrl.projectName}}</em>
+                    项目: <em>{{ctrl.projectName}}</em>
                 </div>
                 <div class="col-xs-9.5 text-standard-sm dash-overflow">
-                    Team: <em>{{ctrl.teamName}}</em>
+                    团队: <em>{{ctrl.teamName}}</em>
                 </div>
 			</div>
 
 			<div class="widget-heading">
-				<div class="iteration-change-btn text-standard-sm">Iteration:
+				<div class="iteration-change-btn text-standard-sm">迭代:
 					<button id="next-btn" class="pull-right btn-default btn-xm active" ng-show="ctrl.numberOfSprintTypes === 2" ng-click="ctrl.animateAgileView(true)">>></button>
 					<button id="pause-btn" class="pull-right btn-default btn-xm active" ng-show="ctrl.numberOfSprintTypes === 2" ng-click="ctrl.pauseAgileView()" ng-model="ctrl.pausePlaySymbol">{{ctrl.pausePlaySymbol}}</button>
 				</div>
@@ -126,13 +126,13 @@
 						<div class="story-summary-count story-open">
 							<span>{{ctrl.openStoryPointsKanban}}</span>
 						</div>
-						<div class="story-summary-type">Open</div>
+						<div class="story-summary-type">开启数量</div>
 					</div>
 					<div class="col-xs-6">
 						<div class="story-summary-count story-wip">
 							<span>{{ctrl.wipStoryPointsKanban}}</span>
 						</div>
-						<div class="story-summary-type">WIP</div>
+						<div class="story-summary-type">关闭数量</div>
 					</div>
 				</div>
 			</div>
@@ -140,7 +140,7 @@
 
 		<div class="widget">
 			<div class="widget-body" ng-if="ctrl.listType === 'epics'">
-				<div class="widget-heading">Epics in Progress
+				<div class="widget-heading">事故列表
 					<button class="pull-right btn-default btn-xm active" ng-show="ctrl.showFeatureLimitButton" ng-click="ctrl.setFeatureLimit()" ng-init="ctrl.featureLimit=4">+/-</button>
 				</div>
 				<div class="dash-row" ng-repeat="epic in ctrl.epicStoryPointsKanban | limitTo:ctrl.featureLimit">
@@ -155,7 +155,7 @@
 			</div>
 			
 			<div class="widget-body" ng-if="ctrl.listType === 'issues'">
-                <div class="widget-heading">Issues in Progress
+                <div class="widget-heading">问题列表
                     <button class="pull-right btn-default btn-xm active" ng-show="ctrl.showFeatureLimitButton" ng-click="ctrl.setFeatureLimit()" ng-init="ctrl.featureLimit=4">+/-</button>
                 </div>
                 <div class="dash-row" ng-repeat="issue in ctrl.issueStoryPointsKanban | limitTo:ctrl.featureLimit">

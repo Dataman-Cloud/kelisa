@@ -5,7 +5,7 @@
 
         <div class="form-group text-center"
              ng-class="{'has-error': configForm.roomName.$invalid && chatOpsConfig.submitted}">
-            <label class="modal-label">Chat Engine</label> <select name="chatOpsOption"
+            <label class="modal-label">聊天引擎</label> <select name="chatOpsOption"
                                                                    class="form-control"
                                                                    ng-model="chatOpsConfig.chatOpsOption"
                                                                    ng-options="chatOpsOption.value for chatOpsOption in chatOpsConfig.chatOpsOptions"
@@ -13,55 +13,51 @@
         </select>
 
             <p class="help-block"
-               ng-if="configForm.collectorItemId.$error.required">Please select
-                a Chat Room Provider</p>
+               ng-if="configForm.collectorItemId.$error.required">请选择一个聊天室</p>
         </div>
 
         <div class="form-group clearfix"
              ng-class="{'has-error': configForm.chatOpsServerUrl.$invalid && chatOpsConfig.submitted}">
             <div class="col-sm-push-2 col-sm-8">
-                <label class="modal-label">ChatOps Server URL</label> <input type="text"
+                <label class="modal-label">聊天室服务器URL</label> <input type="text"
                                                                              name="chatOpsServerUrl"
                                                                              class="form-control"
                                                                              ng-model="chatOpsConfig.chatOpsServerUrl"
                                                                              placeholder="Enter URL" required>
 
-                <p class="help-block" ng-if="configForm.chatOpsServerUrl.$error.required">ChatOps Server
-                    URL is required</p>
+                <p class="help-block" ng-if="configForm.chatOpsServerUrl.$error.required">聊天室服务器URL为必填项</p>
             </div>
         </div>
 
         <div class="form-group clearfix"
              ng-class="{'has-error': configForm.chatOpsRoomName.$invalid && chatOpsConfig.submitted}">
             <div class="col-sm-push-2 col-sm-8">
-                <label class="modal-label">Room Name</label> <input type="text"
+                <label class="modal-label">房间名称</label> <input type="text"
                                                                           name="chatOpsRoomName"
                                                                           class="form-control"
                                                                           ng-model="chatOpsConfig.chatOpsRoomName"
                                                                           placeholder="Enter ChatOps Room Name" required>
 
-                <p class="help-block" ng-if="configForm.chatOpsRoomName.$error.required">ChatOps Server
-                    AuthToken is required</p>
+                <p class="help-block" ng-if="configForm.chatOpsRoomName.$error.required">聊天服务器认证为必填项</p>
             </div>
         </div>
 
         <div class="form-group clearfix"
              ng-class="{'has-error': configForm.chatOpsRoomAuthToken.$invalid && chatOpsConfig.submitted}">
             <div class="col-sm-push-2 col-sm-8">
-                <label class="modal-label">Room Auth Token</label> <input type="password"
+                <label class="modal-label">聊天室认证</label> <input type="password"
                                                                              name="chatOpsRoomAuthToken"
                                                                              class="form-control"
                                                                              ng-model="chatOpsConfig.chatOpsRoomAuthToken"
                                                                              placeholder="Enter ChatOps Room Auth Token" required>
 
-                <p class="help-block" ng-if="configForm.chatOpsRoomAuthToken.$error.required">ChatOps Server
-                   AuthToken is required</p>
+                <p class="help-block" ng-if="configForm.chatOpsRoomAuthToken.$error.required">聊天室认证为必填项</p>
             </div>
         </div>
 
 
         <div class="button-row row text-center">
-            <button type="submit" class="btn btn-primary btn-wide">Save</button>
+            <button type="submit" class="btn btn-primary btn-wide">保存</button>
         </div>
     </form>
 </widget-modal>
